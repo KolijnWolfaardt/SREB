@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by PcbNew date = Wed 12 Feb 2014 12:47:21 SAST
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 4/18/2014 4:02:31 PM
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FE72;
@@ -253,6 +253,48 @@ IdModule  = LED-3MM;
 EndCmp
 
 BeginCmp
+TimeStamp = /53513413;
+Reference = MountingHole1;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /53513653;
+Reference = MountingHole2;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /53513659;
+Reference = MountingHole3;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5351365F;
+Reference = MountingHole4;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5351372F;
+Reference = OSHWLogoBack1;
+ValeurCmp = CONN_1;
+IdModule  = OSHW-logo_copper-back_10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /53513665;
+Reference = OSHWLogoFront1;
+ValeurCmp = CONN_1;
+IdModule  = OSHW-logo_silkscreen-front_10mm;
+EndCmp
+
+BeginCmp
 TimeStamp = /52F7DBA6/52F7B5DF;
 Reference = P1;
 ValeurCmp = CONN_3;
@@ -438,56 +480,56 @@ BeginCmp
 TimeStamp = /52F7D123/52F7D382;
 Reference = R1;
 ValeurCmp = 220;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7EA41/52F8BF80;
 Reference = R2;
 ValeurCmp = 1k;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7EA41/52F8BF8D;
 Reference = R3;
 ValeurCmp = 1k;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7EA41/52F8BF6F;
 Reference = R4;
 ValeurCmp = 10k;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FC27;
 Reference = R5;
 ValeurCmp = 220;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FC35;
 Reference = R6;
 ValeurCmp = 220;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FC44;
 Reference = R7;
 ValeurCmp = 220;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FC60;
 Reference = R8;
 ValeurCmp = 220;
-IdModule  = R4;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
@@ -529,7 +571,7 @@ BeginCmp
 TimeStamp = /52F7EA41/52F7EB46;
 Reference = U3;
 ValeurCmp = PIC18F4550;
-IdModule  = DIP-40__300;
+IdModule  = DIP-40__600;
 EndCmp
 
 BeginCmp

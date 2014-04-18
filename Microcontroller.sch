@@ -31,7 +31,6 @@ LIBS:contrib
 LIBS:valves
 LIBS:pic18f4550
 LIBS:l293
-LIBS:dp_devices
 LIBS:Robotics Board-cache
 EELAYER 27 0
 EELAYER END
@@ -39,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 6
 Title ""
-Date "12 feb 2014"
+Date "18 apr 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -333,8 +332,6 @@ Wire Wire Line
 	6300 1600 6700 1600
 Wire Wire Line
 	6300 1750 6700 1750
-NoConn ~ 6300 1850
-NoConn ~ 5550 1850
 Wire Wire Line
 	3350 1200 3850 1200
 Wire Wire Line
@@ -856,4 +853,22 @@ $EndComp
 Wire Wire Line
 	2350 3750 2250 3750
 Connection ~ 2250 3750
+Wire Wire Line
+	5550 1850 5250 1850
+Connection ~ 5250 1850
+$Comp
+L GND #PWR038
+U 1 1 53514222
+P 6400 1950
+F 0 "#PWR038" H 6400 1950 30  0001 C CNN
+F 1 "GND" H 6400 1880 30  0001 C CNN
+F 2 "" H 6400 1950 60  0000 C CNN
+F 3 "" H 6400 1950 60  0000 C CNN
+	1    6400 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 1850 6400 1850
+Wire Wire Line
+	6400 1850 6400 1950
 $EndSCHEMATC

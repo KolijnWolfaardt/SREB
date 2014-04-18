@@ -31,7 +31,6 @@ LIBS:contrib
 LIBS:valves
 LIBS:pic18f4550
 LIBS:l293
-LIBS:dp_devices
 LIBS:Robotics Board-cache
 EELAYER 27 0
 EELAYER END
@@ -39,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title ""
-Date "12 feb 2014"
+Date "18 apr 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -211,4 +210,76 @@ U 52F479D5
 F0 "PrototypeArea" 50
 F1 "PrototypeArea.sch" 50
 $EndSheet
+$Comp
+L CONN_1 MountingHole1
+U 1 1 53513413
+P 5300 6400
+F 0 "MountingHole1" H 5380 6400 40  0000 L CNN
+F 1 "CONN_1" H 5300 6455 30  0001 C CNN
+F 2 "" H 5300 6400 60  0000 C CNN
+F 3 "" H 5300 6400 60  0000 C CNN
+	1    5300 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MountingHole2
+U 1 1 53513653
+P 5300 6500
+F 0 "MountingHole2" H 5380 6500 40  0000 L CNN
+F 1 "CONN_1" H 5300 6555 30  0001 C CNN
+F 2 "" H 5300 6500 60  0000 C CNN
+F 3 "" H 5300 6500 60  0000 C CNN
+	1    5300 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MountingHole3
+U 1 1 53513659
+P 5300 6600
+F 0 "MountingHole3" H 5380 6600 40  0000 L CNN
+F 1 "CONN_1" H 5300 6655 30  0001 C CNN
+F 2 "" H 5300 6600 60  0000 C CNN
+F 3 "" H 5300 6600 60  0000 C CNN
+	1    5300 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MountingHole4
+U 1 1 5351365F
+P 5300 6700
+F 0 "MountingHole4" H 5380 6700 40  0000 L CNN
+F 1 "CONN_1" H 5300 6755 30  0001 C CNN
+F 2 "" H 5300 6700 60  0000 C CNN
+F 3 "" H 5300 6700 60  0000 C CNN
+	1    5300 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 OSHWLogoFront1
+U 1 1 53513665
+P 5300 6850
+F 0 "OSHWLogoFront1" H 5380 6850 40  0000 L CNN
+F 1 "CONN_1" H 5300 6905 30  0001 C CNN
+F 2 "" H 5300 6850 60  0000 C CNN
+F 3 "" H 5300 6850 60  0000 C CNN
+	1    5300 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 OSHWLogoBack1
+U 1 1 5351372F
+P 5300 6950
+F 0 "OSHWLogoBack1" H 5380 6950 40  0000 L CNN
+F 1 "CONN_1" H 5300 7005 30  0001 C CNN
+F 2 "" H 5300 6950 60  0000 C CNN
+F 3 "" H 5300 6950 60  0000 C CNN
+	1    5300 6950
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5150 6950
+NoConn ~ 5150 6850
+NoConn ~ 5150 6700
+NoConn ~ 5150 6600
+NoConn ~ 5150 6500
+NoConn ~ 5150 6400
 $EndSCHEMATC

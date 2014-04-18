@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Wed 12 Feb 2014 13:51:31 SAST
+PCBNEW-LibModule-V1  4/18/2014 3:30:54 PM
 # encoding utf-8
 Units mm
 $INDEX
@@ -1626,7 +1626,7 @@ Po 3.81 -2.54
 $EndPAD
 $EndMODULE SPST
 $MODULE USB_mantech
-Po 0 0 0 15 52FB528F 00000000 ~~
+Po 0 0 0 15 53512901 00000000 ~~
 Li USB_mantech
 Sc 0
 AR 
@@ -1642,28 +1642,28 @@ Sh "1" R 1.524 2 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
 Ne 0 ""
-Po 3.5 2.6
+Po -3.5 2.6
 $EndPAD
 $PAD
 Sh "2" R 1.524 2 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
 Ne 0 ""
-Po 1 2.6
+Po -1 2.6
 $EndPAD
 $PAD
 Sh "3" R 1.524 2 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
 Ne 0 ""
-Po -1 2.6
+Po 1 2.6
 $EndPAD
 $PAD
 Sh "4" R 1.524 2 0 0 0
 Dr 1.016 0 0
 At STD N 00E0FFFF
 Ne 0 ""
-Po -3.5 2.6
+Po 3.5 2.6
 $EndPAD
 $PAD
 Sh "5" C 3.7 3.7 0 0 0
