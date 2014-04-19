@@ -31,6 +31,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:pic18f4550
 LIBS:l293
+LIBS:FT230x
 LIBS:Robotics Board-cache
 EELAYER 27 0
 EELAYER END
@@ -38,7 +39,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 6
 Title ""
-Date "18 apr 2014"
+Date "19 apr 2014"
 Rev ""
 Comp ""
 Comment1 ""

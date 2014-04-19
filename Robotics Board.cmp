@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 4/18/2014 4:02:31 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = Sat 19 Apr 2014 09:54:45 SAST
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FE72;
@@ -134,6 +134,13 @@ IdModule  = C1V5;
 EndCmp
 
 BeginCmp
+TimeStamp = /52F7EA41/53518E36;
+Reference = C20;
+ValeurCmp = 100nF;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
 TimeStamp = /52F7D123/52F7D2D1;
 Reference = CON1;
 ValeurCmp = DC_IN;
@@ -211,6 +218,20 @@ IdModule  = D4;
 EndCmp
 
 BeginCmp
+TimeStamp = /52F7EA41/53521F43;
+Reference = D11;
+ValeurCmp = TxLED;
+IdModule  = LED-3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53521F50;
+Reference = D12;
+ValeurCmp = RxLED;
+IdModule  = LED-3MM;
+EndCmp
+
+BeginCmp
 TimeStamp = /52F7EA41/52F8381E;
 Reference = ICSP1;
 ValeurCmp = CONN_6;
@@ -222,6 +243,20 @@ TimeStamp = /52F7EA41/52F7F2DD;
 Reference = J1;
 ValeurCmp = USB;
 IdModule  = USB_mantech;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/535194FB;
+Reference = K1;
+ValeurCmp = CONN_3;
+IdModule  = SIL-3;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53519508;
+Reference = K2;
+ValeurCmp = CONN_3;
+IdModule  = SIL-3;
 EndCmp
 
 BeginCmp
@@ -323,24 +358,24 @@ IdModule  = SIL-12;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E267;
+TimeStamp = /52F479D5/53519DDC;
 Reference = P5;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E274;
+TimeStamp = /52F479D5/53519DE9;
 Reference = P6;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E29C;
+TimeStamp = /52F479D5/53519DEF;
 Reference = P7;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
@@ -372,10 +407,10 @@ IdModule  = Pin_array_8x3;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E2A8;
+TimeStamp = /52F479D5/53519E09;
 Reference = P12;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
@@ -386,10 +421,10 @@ IdModule  = Pin_array_6x3;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E2B4;
+TimeStamp = /52F479D5/53519E0F;
 Reference = P14;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
@@ -400,52 +435,52 @@ IdModule  = SIL-5;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E290;
+TimeStamp = /52F479D5/53519E15;
 Reference = P16;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E284;
+TimeStamp = /52F479D5/53519E1B;
 Reference = P17;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E28A;
+TimeStamp = /52F479D5/53519E21;
 Reference = P18;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E2A2;
+TimeStamp = /52F479D5/53519E27;
 Reference = P19;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E2AE;
+TimeStamp = /52F479D5/53519E2D;
 Reference = P20;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E2BA;
+TimeStamp = /52F479D5/53519E33;
 Reference = P21;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F479D5/52F7E296;
+TimeStamp = /52F479D5/53519E39;
 Reference = P22;
-ValeurCmp = CONN_20;
-IdModule  = SIL-20-No-Silk;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12-No-Silk;
 EndCmp
 
 BeginCmp
@@ -547,6 +582,20 @@ IdModule  = R4;
 EndCmp
 
 BeginCmp
+TimeStamp = /52F7EA41/53521F65;
+Reference = R11;
+ValeurCmp = R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53521F58;
+Reference = R12;
+ValeurCmp = R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
 TimeStamp = /52F7EA41/52F8BF7A;
 Reference = Reset1;
 ValeurCmp = DPST;
@@ -572,6 +621,13 @@ TimeStamp = /52F7EA41/52F7EB46;
 Reference = U3;
 ValeurCmp = PIC18F4550;
 IdModule  = DIP-40__600;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53518653;
+Reference = U4;
+ValeurCmp = FT230X;
+IdModule  = ssop-16-extended;
 EndCmp
 
 BeginCmp

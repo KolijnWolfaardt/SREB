@@ -1,4 +1,4 @@
-update=4/18/2014 3:28:35 PM
+update=Fri 18 Apr 2014 22:08:38 SAST
 version=1
 last_client=eeschema
 [general]
@@ -88,3 +88,4 @@ LibName29=contrib
 LibName30=valves
 LibName31=pic18f4550
 LibName32=l293
+LibName33=FT230x
