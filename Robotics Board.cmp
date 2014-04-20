@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = Sat 19 Apr 2014 13:29:40 SAST
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = Sun 20 Apr 2014 09:49:36 SAST
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FE72;
@@ -99,10 +99,10 @@ IdModule  = C2;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F7EA41/52F7F045;
+TimeStamp = /52F7D123/5353742F;
 Reference = C13;
-ValeurCmp = 220nF;
-IdModule  = C2;
+ValeurCmp = 1uF;
+IdModule  = C1V5;
 EndCmp
 
 BeginCmp
@@ -150,6 +150,20 @@ EndCmp
 BeginCmp
 TimeStamp = /52F7EA41/53518E36;
 Reference = C20;
+ValeurCmp = 100nF;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7D123/53537435;
+Reference = C21;
+ValeurCmp = 100nF;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53539595;
+Reference = C22;
 ValeurCmp = 100nF;
 IdModule  = C2;
 EndCmp
@@ -505,6 +519,13 @@ IdModule  = SIL-1;
 EndCmp
 
 BeginCmp
+TimeStamp = /52F479D5/53538B70;
+Reference = P24;
+ValeurCmp = CONN_12;
+IdModule  = SIL-12;
+EndCmp
+
+BeginCmp
 TimeStamp = /52F7D123/52F87EC3;
 Reference = POW_SEL1;
 ValeurCmp = CONN_3;
@@ -624,6 +645,13 @@ IdModule  = R3;
 EndCmp
 
 BeginCmp
+TimeStamp = /52F7EA41/53539586;
+Reference = R15;
+ValeurCmp = 18k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
 TimeStamp = /52F7EA41/52F8BF7A;
 Reference = Reset1;
 ValeurCmp = DPST;
@@ -656,6 +684,13 @@ TimeStamp = /52F7EA41/53518653;
 Reference = U4;
 ValeurCmp = FT230X;
 IdModule  = ssop-16-extended;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7D123/535376D9;
+Reference = U5;
+ValeurCmp = 3.3VREG;
+IdModule  = LM78XXV-NumberedPads;
 EndCmp
 
 BeginCmp

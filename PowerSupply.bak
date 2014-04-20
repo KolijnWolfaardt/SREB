@@ -32,6 +32,7 @@ LIBS:valves
 LIBS:pic18f4550
 LIBS:l293
 LIBS:FT230x
+LIBS:33vReg
 LIBS:Robotics Board-cache
 EELAYER 27 0
 EELAYER END
@@ -39,7 +40,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 6
 Title ""
-Date "19 apr 2014"
+Date "20 apr 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -342,4 +343,82 @@ Text GLabel 8300 3550 2    60   Input ~ 0
 Vdd
 Wire Wire Line
 	6400 3550 6400 3650
+$Comp
+L C C13
+U 1 1 5353742F
+P 8400 5600
+F 0 "C13" H 8400 5700 40  0000 L CNN
+F 1 "1uF" H 8406 5515 40  0000 L CNN
+F 2 "~" H 8438 5450 30  0000 C CNN
+F 3 "~" H 8400 5600 60  0000 C CNN
+	1    8400 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C21
+U 1 1 53537435
+P 8650 5600
+F 0 "C21" H 8650 5700 40  0000 L CNN
+F 1 "100nF" H 8656 5515 40  0000 L CNN
+F 2 "~" H 8688 5450 30  0000 C CNN
+F 3 "~" H 8650 5600 60  0000 C CNN
+	1    8650 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 5300 8800 5300
+Wire Wire Line
+	8400 5300 8400 5400
+Wire Wire Line
+	7850 5950 8650 5950
+Wire Wire Line
+	8400 5800 8400 6000
+Wire Wire Line
+	8650 5950 8650 5800
+Connection ~ 8400 5950
+Wire Wire Line
+	8650 5250 8650 5400
+Connection ~ 8400 5300
+$Comp
+L GND #PWR08
+U 1 1 53537546
+P 8400 6000
+F 0 "#PWR08" H 8400 6000 30  0001 C CNN
+F 1 "GND" H 8400 5930 30  0001 C CNN
+F 2 "" H 8400 6000 60  0000 C CNN
+F 3 "" H 8400 6000 60  0000 C CNN
+	1    8400 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR09
+U 1 1 53537584
+P 8650 5250
+F 0 "#PWR09" H 8650 5210 30  0001 C CNN
+F 1 "+3.3V" H 8650 5360 30  0000 C CNN
+F 2 "" H 8650 5250 60  0000 C CNN
+F 3 "" H 8650 5250 60  0000 C CNN
+	1    8650 5250
+	1    0    0    -1  
+$EndComp
+Connection ~ 8650 5300
+Text GLabel 7350 5300 0    60   Input ~ 0
+Vdd
+Wire Wire Line
+	7350 5300 7500 5300
+Text GLabel 8800 5300 2    60   Input ~ 0
+V3.3
+$Comp
+L 3.3VREG U5
+U 1 1 535376D9
+P 7850 5300
+F 0 "U5" H 8000 5050 60  0000 C CNN
+F 1 "3.3VREG" H 7800 5400 60  0000 C CNN
+F 2 "~" H 7850 5300 60  0000 C CNN
+F 3 "~" H 7850 5300 60  0000 C CNN
+	1    7850 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 5950 7850 5600
 $EndSCHEMATC
