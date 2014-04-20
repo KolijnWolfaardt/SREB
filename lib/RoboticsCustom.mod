@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Sun 20 Apr 2014 09:44:39 SAST
+PCBNEW-LibModule-V1  Sun 20 Apr 2014 23:12:10 SAST
 # encoding utf-8
 Units mm
 $INDEX
@@ -14,6 +14,7 @@ SIL-25
 SIL-26
 SPST
 USB_mantech
+so-20
 ssop-16-extended
 $EndINDEX
 $MODULE DIP-40__300
@@ -1835,6 +1836,168 @@ Po -2.25 0
 .ZoneConnection 0
 $EndPAD
 $EndMODULE USB_mantech
+$MODULE so-20
+Po 0 0 0 15 53543827 00000000 ~~
+Li so-20
+Cd SO-20
+Sc 0
+AR 
+Op 0 0 0
+At SMD
+T0 1.905 -2.667 0.762 0.762 0 0.1524 N V 21 N "SO-20"
+T1 1.905 2.921 0.762 0.762 0 0.1524 N V 21 N "U***"
+DC -3.683 2.413 -3.048 2.159 0.1524 21
+DS -4.953 3.683 7.493 3.683 0.1524 21
+DS 7.493 3.683 7.493 -3.683 0.1524 21
+DS 7.493 -3.683 -4.953 -3.683 0.1524 21
+DS -4.953 -3.683 -4.953 3.683 0.1524 21
+$PAD
+Sh "1" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4.445 4.7
+$EndPAD
+$PAD
+Sh "2" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.175 4.7
+$EndPAD
+$PAD
+Sh "3" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.905 4.699
+$EndPAD
+$PAD
+Sh "4" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.635 4.699
+$EndPAD
+$PAD
+Sh "5" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.635 4.699
+$EndPAD
+$PAD
+Sh "6" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.905 4.699
+$EndPAD
+$PAD
+Sh "7" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.175 4.699
+$EndPAD
+$PAD
+Sh "8" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4.445 4.699
+$EndPAD
+$PAD
+Sh "9" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5.715 4.699
+$EndPAD
+$PAD
+Sh "10" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 6.985 4.699
+$EndPAD
+$PAD
+Sh "11" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 6.985 -4.7
+$EndPAD
+$PAD
+Sh "12" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5.715 -4.699
+$EndPAD
+$PAD
+Sh "17" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.635 -4.699
+$EndPAD
+$PAD
+Sh "18" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.905 -4.699
+$EndPAD
+$PAD
+Sh "19" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.175 -4.699
+$EndPAD
+$PAD
+Sh "20" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4.445 -4.699
+$EndPAD
+$PAD
+Sh "13" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4.445 -4.699
+$EndPAD
+$PAD
+Sh "14" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.175 -4.699
+$EndPAD
+$PAD
+Sh "15" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.905 -4.699
+$EndPAD
+$PAD
+Sh "16" R 0.6 1.95 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.635 -4.699
+$EndPAD
+$SHAPE3D
+Na "smd/smd_dil/so-16.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE so-20
 $MODULE ssop-16-extended
 Po 0 0 0 15 53522A7E 00000000 ~~
 Li ssop-16-extended

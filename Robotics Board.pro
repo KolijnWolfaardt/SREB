@@ -1,4 +1,4 @@
-update=Sun 20 Apr 2014 08:46:00 SAST
+update=Sun 20 Apr 2014 22:40:21 SAST
 version=1
 last_client=eeschema
 [general]
@@ -90,3 +90,4 @@ LibName31=pic18f4550
 LibName32=l293
 LibName33=FT230x
 LibName34=33vReg
+LibName35=mcp2200

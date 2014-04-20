@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = Sun 20 Apr 2014 09:49:36 SAST
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = Sun 20 Apr 2014 23:41:54 SAST
 
 BeginCmp
 TimeStamp = /52F7F5F3/52F7FE72;
@@ -134,24 +134,24 @@ IdModule  = C1V5;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F7EA41/535267EE;
+TimeStamp = /52F7D123/5354577E;
 Reference = C18;
-ValeurCmp = 47pF;
-IdModule  = C1;
-EndCmp
-
-BeginCmp
-TimeStamp = /52F7EA41/535267FB;
-Reference = C19;
-ValeurCmp = 47pF;
-IdModule  = C1;
-EndCmp
-
-BeginCmp
-TimeStamp = /52F7EA41/53518E36;
-Reference = C20;
 ValeurCmp = 100nF;
 IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/535439DB;
+Reference = C19;
+ValeurCmp = 30pF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/535439D5;
+Reference = C20;
+ValeurCmp = 30pF;
+IdModule  = C1;
 EndCmp
 
 BeginCmp
@@ -165,6 +165,27 @@ BeginCmp
 TimeStamp = /52F7EA41/53539595;
 Reference = C22;
 ValeurCmp = 100nF;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53544DD7;
+Reference = C23;
+ValeurCmp = 100nF;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/53544AE6;
+Reference = C24;
+ValeurCmp = 220nF;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/535441E1;
+Reference = C25;
+ValeurCmp = 220nF;
 IdModule  = C2;
 EndCmp
 
@@ -619,28 +640,14 @@ EndCmp
 BeginCmp
 TimeStamp = /52F7EA41/53521F65;
 Reference = R11;
-ValeurCmp = 270;
+ValeurCmp = 220;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F7EA41/53521F58;
 Reference = R12;
-ValeurCmp = 270;
-IdModule  = R3;
-EndCmp
-
-BeginCmp
-TimeStamp = /52F7EA41/53526803;
-Reference = R13;
-ValeurCmp = 27;
-IdModule  = R3;
-EndCmp
-
-BeginCmp
-TimeStamp = /52F7EA41/53526810;
-Reference = R14;
-ValeurCmp = 27;
+ValeurCmp = 220;
 IdModule  = R3;
 EndCmp
 
@@ -680,10 +687,10 @@ IdModule  = DIP-40__600;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F7EA41/53518653;
+TimeStamp = /52F7EA41/535438EB;
 Reference = U4;
-ValeurCmp = FT230X;
-IdModule  = ssop-16-extended;
+ValeurCmp = MCP2200;
+IdModule  = so-20;
 EndCmp
 
 BeginCmp
@@ -697,6 +704,13 @@ BeginCmp
 TimeStamp = /52F7EA41/52F7EEA8;
 Reference = X1;
 ValeurCmp = 4MHz;
+IdModule  = HC-49V;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F7EA41/535438F8;
+Reference = X2;
+ValeurCmp = 12MHz;
 IdModule  = HC-49V;
 EndCmp
 

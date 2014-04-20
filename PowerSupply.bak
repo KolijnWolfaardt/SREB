@@ -33,6 +33,7 @@ LIBS:pic18f4550
 LIBS:l293
 LIBS:FT230x
 LIBS:33vReg
+LIBS:mcp2200
 LIBS:Robotics Board-cache
 EELAYER 27 0
 EELAYER END
@@ -370,7 +371,7 @@ Wire Wire Line
 Wire Wire Line
 	8400 5300 8400 5400
 Wire Wire Line
-	7850 5950 8650 5950
+	7300 5950 8650 5950
 Wire Wire Line
 	8400 5800 8400 6000
 Wire Wire Line
@@ -402,10 +403,10 @@ F 3 "" H 8650 5250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 8650 5300
-Text GLabel 7350 5300 0    60   Input ~ 0
+Text GLabel 7000 5300 0    60   Input ~ 0
 Vdd
 Wire Wire Line
-	7350 5300 7500 5300
+	7000 5300 7500 5300
 Text GLabel 8800 5300 2    60   Input ~ 0
 V3.3
 $Comp
@@ -421,4 +422,21 @@ F 3 "~" H 7850 5300 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	7850 5950 7850 5600
+$Comp
+L C C18
+U 1 1 5354577E
+P 7300 5600
+F 0 "C18" H 7300 5700 40  0000 L CNN
+F 1 "100nF" H 7306 5515 40  0000 L CNN
+F 2 "~" H 7338 5450 30  0000 C CNN
+F 3 "~" H 7300 5600 60  0000 C CNN
+	1    7300 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 5950 7300 5800
+Connection ~ 7850 5950
+Wire Wire Line
+	7300 5400 7300 5300
+Connection ~ 7300 5300
 $EndSCHEMATC
