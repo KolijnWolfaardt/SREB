@@ -1,0 +1,14 @@
+name: "My Page Name"
+description: "Description of my site"
+
+url: "http://localhost:4000"
+
+layout: default
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+pygments: false
+
+

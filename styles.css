@@ -1,0 +1,94 @@
+html,body
+{
+	margin:0px;
+	border:0px;
+	padding:0px;
+	background-image:url("images/mooning.png");
+	height:100%;
+	font-family:Helvetica;
+}
+
+#header
+{
+	background-image:url("images/blue_cup.png");
+	width:100%;
+	height:300px;
+}
+
+#headerText
+{
+
+}
+
+.banner
+{
+
+}
+.navbar
+{
+	width:100%;
+	height:50px;
+	background-color:#235;
+	/*#3c5684*/	
+}
+.content
+{
+	width:800px;
+	min-height:500px;
+	margin:0px auto;
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+
+	background-color:rgb(255,255,255);
+}
+.footer
+{
+	width:100%;
+	height:100px;
+	background-color:#333;
+	color:#999;
+}
+
+.menu
+{
+	width:800px;
+	margin:0px auto;
+	padding:0px;
+	height:100%;
+}
+
+.menuItem
+{
+	display:inline-block;
+	width:130px;	
+	margin:0px;
+	height:50px;
+}
+
+.menuItem a
+{
+	padding: 15px 0px 15px 0px;
+	height:20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center
+}
+
+.menuItem a,
+.menuItem a:visited
+{
+	
+	color:#eee;
+	text-decoration:none;
+
+}
+
+.menuItem a:hover,
+.menuItem a:active
+{
+	color:#F8CF93;
+	font-weight:bold;
+	background-color:#3c5684;
+	text-shadow: 1px 1px #333;
+}
