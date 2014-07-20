@@ -4053,23 +4053,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 148: extern void _delay3(unsigned char);
 [; ;gpio.h: 7: void GPIO_Setup();
 [; ;gpio.c: 4: void GPIO_Setup();
-"13 source/gpio.c
+"11 source/gpio.c
 [v _GPIO_Setup `(v ~T0 @X0 1 ef ]
 {
-[; ;gpio.c: 12: void GPIO_Setup()
-[; ;gpio.c: 13: {
+[; ;gpio.c: 10: void GPIO_Setup()
+[; ;gpio.c: 11: {
 [e :U _GPIO_Setup ]
 [f ]
-[; ;gpio.c: 15: TRISD = TRISD & 0xf0;
-"15
+[; ;gpio.c: 13: TRISD = TRISD & 0xf0;
+"13
 [e = _TRISD -> & -> _TRISD `i -> 240 `i `uc ]
-[; ;gpio.c: 16: PORTD = 0x00;
-"16
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;gpio.c: 19: TRISD = TRISD | 0x30;
-"19
+[; ;gpio.c: 14: PORTD = PORTD & 0xf0;
+"14
+[e = _PORTD -> & -> _PORTD `i -> 240 `i `uc ]
+[; ;gpio.c: 17: TRISD = TRISD | 0x30;
+"17
 [e = _TRISD -> | -> _TRISD `i -> 48 `i `uc ]
-[; ;gpio.c: 20: }
-"20
+[; ;gpio.c: 18: }
+"18
 [e :UE 535 ]
 }

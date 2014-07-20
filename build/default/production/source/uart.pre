@@ -5289,22 +5289,20 @@ void RX_Interrupt();
 volatile char RXBuffer[128];
 char rx_write = 0;
 
-extern unsigned long milliseconds;
-
-# 18
+# 29
 void UART_Setup()
 {
 
-# 30
+# 41
 TXSTA1 = 0b00001000;
 
-# 41
+# 52
 RCSTA = 0b10010000;
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
 RCONbits.IPEN = 1;
 
-# 52
+# 63
 PIR1bits.RCIF = 0;
 
 PIE1bits.RCIE = 1;
@@ -5317,7 +5315,7 @@ SPBRG = ((48000000/115200)/16)-1;
 TXSTA1bits.TXEN = 1;
 }
 
-# 71
+# 83
 void UART_TX(char buffer[], int bufLength)
 {
 int i = 0;
@@ -5328,7 +5326,7 @@ UART_TX_byte(buffer[i]);
 }
 }
 
-# 85
+# 98
 void UART_TX_byte(char character)
 {
 
@@ -5337,16 +5335,16 @@ TXREG = character;
 while (TXSTAbits.TRMT == 0);
 }
 
+# 111
 void RX_Interrupt()
 {
 
 RXBuffer[rx_write] = RCREG;
 
+
 rx_write++;
 if (rx_write == 128)
 rx_write = 0;
-
-PORTDbits.RD3 = !PORTDbits.RD3;
 
 
 PIR1bits.RCIF = 0;

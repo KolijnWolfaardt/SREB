@@ -4073,105 +4073,105 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 144: extern void _delay(unsigned long);
 [; ;pic18.h: 146: extern void _delaywdt(unsigned long);
 [; ;pic18.h: 148: extern void _delay3(unsigned char);
-[; ;pwm.h: 7: void PWM1_level(char level);
-[; ;pwm.h: 8: void PWM2_level(char level);
-[; ;pwm.h: 9: void PWM1_enable(char enable);
-[; ;pwm.h: 10: void PWM2_enable(char enable);
-[; ;pwm.c: 4: void PWM1_level(char level);
-[; ;pwm.c: 5: void PWM2_level(char level);
-[; ;pwm.c: 6: void PWM1_enable(char enable);
-[; ;pwm.c: 7: void PWM2_enable(char enable);
-"11 source/pwm.c
+[; ;pwm.h: 7: void PWM1_enable(char enable);
+[; ;pwm.h: 8: void PWM2_enable(char enable);
+[; ;pwm.h: 9: void PWM1_level(int level);
+[; ;pwm.h: 10: void PWM2_level(int level);
+[; ;pwm.c: 4: void PWM1_enable(char enable);
+[; ;pwm.c: 5: void PWM2_enable(char enable);
+[; ;pwm.c: 6: void PWM1_level(int level);
+[; ;pwm.c: 7: void PWM2_level(int level);
+"16 source/pwm.c
 [v _PWM1_enable `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;pwm.c: 10: void PWM1_enable(char enable)
-[; ;pwm.c: 11: {
+[; ;pwm.c: 15: void PWM1_enable(char enable)
+[; ;pwm.c: 16: {
 [e :U _PWM1_enable ]
 [v _enable `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;pwm.c: 12: if (enable == 0)
-"12
+[; ;pwm.c: 17: if (enable == 0)
+"17
 [e $ ! == -> _enable `i -> 0 `i 536  ]
-[; ;pwm.c: 13: CCP1CONbits.CCP1M = 0b0000;
-"13
+[; ;pwm.c: 18: CCP1CONbits.CCP1M = 0b0000;
+"18
 [e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
 [e $U 537  ]
-"14
+"19
 [e :U 536 ]
-[; ;pwm.c: 14: else
-[; ;pwm.c: 15: {
-"15
+[; ;pwm.c: 19: else
+[; ;pwm.c: 20: {
+"20
 {
-[; ;pwm.c: 16: CCP1CONbits.CCP1M = 0b1100;
-"16
+[; ;pwm.c: 21: CCP1CONbits.CCP1M = 0b1100;
+"21
 [e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
-"17
+"22
 }
 [e :U 537 ]
-[; ;pwm.c: 17: }
-[; ;pwm.c: 18: }
-"18
+[; ;pwm.c: 22: }
+[; ;pwm.c: 23: }
+"23
 [e :UE 535 ]
 }
-"21
+"32
 [v _PWM2_enable `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;pwm.c: 20: void PWM2_enable(char enable)
-[; ;pwm.c: 21: {
+[; ;pwm.c: 31: void PWM2_enable(char enable)
+[; ;pwm.c: 32: {
 [e :U _PWM2_enable ]
 [v _enable `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;pwm.c: 22: if (enable == 0)
-"22
+[; ;pwm.c: 33: if (enable == 0)
+"33
 [e $ ! == -> _enable `i -> 0 `i 539  ]
-[; ;pwm.c: 23: CCP2CONbits.CCP2M = 0b0000;
-"23
+[; ;pwm.c: 34: CCP2CONbits.CCP2M = 0b0000;
+"34
 [e = . . _CCP2CONbits 0 0 -> -> 0 `i `uc ]
 [e $U 540  ]
-"24
+"35
 [e :U 539 ]
-[; ;pwm.c: 24: else
-[; ;pwm.c: 25: CCP2CONbits.CCP2M = 0b1100;
-"25
+[; ;pwm.c: 35: else
+[; ;pwm.c: 36: CCP2CONbits.CCP2M = 0b1100;
+"36
 [e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
 [e :U 540 ]
-[; ;pwm.c: 26: }
-"26
+[; ;pwm.c: 37: }
+"37
 [e :UE 538 ]
 }
-"29
-[v _PWM1_level `(v ~T0 @X0 1 ef1`uc ]
+"45
+[v _PWM1_level `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;pwm.c: 28: void PWM1_level(char level)
-[; ;pwm.c: 29: {
+[; ;pwm.c: 44: void PWM1_level(int level)
+[; ;pwm.c: 45: {
 [e :U _PWM1_level ]
-[v _level `uc ~T0 @X0 1 r1 ]
+[v _level `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;pwm.c: 30: CCP1CONbits.DC1B = level & 0x03;
-"30
-[e = . . _CCP1CONbits 0 1 -> & -> _level `i -> 3 `i `uc ]
-[; ;pwm.c: 31: CCPR1L= level>>2;
-"31
-[e = _CCPR1L -> >> -> _level `i -> 2 `i `uc ]
-[; ;pwm.c: 32: }
-"32
+[; ;pwm.c: 46: CCP1CONbits.DC1B = level & 0x03;
+"46
+[e = . . _CCP1CONbits 0 1 -> & _level -> 3 `i `uc ]
+[; ;pwm.c: 47: CCPR1L= level>>2;
+"47
+[e = _CCPR1L -> >> _level -> 2 `i `uc ]
+[; ;pwm.c: 48: }
+"48
 [e :UE 541 ]
 }
-"35
-[v _PWM2_level `(v ~T0 @X0 1 ef1`uc ]
+"56
+[v _PWM2_level `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;pwm.c: 34: void PWM2_level(char level)
-[; ;pwm.c: 35: {
+[; ;pwm.c: 55: void PWM2_level(int level)
+[; ;pwm.c: 56: {
 [e :U _PWM2_level ]
-[v _level `uc ~T0 @X0 1 r1 ]
+[v _level `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;pwm.c: 36: CCP2CONbits.DC2B = level & 0x03;
-"36
-[e = . . _CCP2CONbits 0 1 -> & -> _level `i -> 3 `i `uc ]
-[; ;pwm.c: 37: CCPR2L= level>>2;
-"37
-[e = _CCPR2L -> >> -> _level `i -> 2 `i `uc ]
-[; ;pwm.c: 38: }
-"38
+[; ;pwm.c: 57: CCP2CONbits.DC2B = level & 0x03;
+"57
+[e = . . _CCP2CONbits 0 1 -> & _level -> 3 `i `uc ]
+[; ;pwm.c: 58: CCPR2L= level>>2;
+"58
+[e = _CCPR2L -> >> _level -> 2 `i `uc ]
+[; ;pwm.c: 59: }
+"59
 [e :UE 542 ]
 }

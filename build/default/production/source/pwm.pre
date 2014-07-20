@@ -5275,18 +5275,18 @@ extern void _delaywdt(unsigned long);
 extern void _delay3(unsigned char);
 
 # 7 "include\pwm.h"
-void PWM1_level(char level);
-void PWM2_level(char level);
 void PWM1_enable(char enable);
 void PWM2_enable(char enable);
+void PWM1_level(int level);
+void PWM2_level(int level);
 
 # 4 "source/pwm.c"
-void PWM1_level(char level);
-void PWM2_level(char level);
 void PWM1_enable(char enable);
 void PWM2_enable(char enable);
+void PWM1_level(int level);
+void PWM2_level(int level);
 
-
+# 15
 void PWM1_enable(char enable)
 {
 if (enable == 0)
@@ -5297,6 +5297,7 @@ CCP1CONbits.CCP1M = 0b1100;
 }
 }
 
+# 31
 void PWM2_enable(char enable)
 {
 if (enable == 0)
@@ -5305,13 +5306,15 @@ else
 CCP2CONbits.CCP2M = 0b1100;
 }
 
-void PWM1_level(char level)
+# 44
+void PWM1_level(int level)
 {
 CCP1CONbits.DC1B = level & 0x03;
 CCPR1L= level>>2;
 }
 
-void PWM2_level(char level)
+# 55
+void PWM2_level(int level)
 {
 CCP2CONbits.DC2B = level & 0x03;
 CCPR2L= level>>2;

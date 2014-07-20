@@ -5301,7 +5301,7 @@ return milliseconds;
 void Timer_Setup()
 {
 
-# 32
+
 T2CON = 0b01001111;
 PR2 = 75;
 
@@ -5313,7 +5313,7 @@ PIE1bits.TMR2IE = 1;
 IPR1bits.TMR2IP = 1;
 }
 
-# 48
+# 49
 void delay_Seconds(int seconds)
 {
 int i =0;
@@ -5323,14 +5323,14 @@ delayMillis(1000);
 }
 }
 
-# 61
+# 67
 void delay_Millis(int num)
 {
 milliDelayCount = num;
 while (milliDelayCount>0);
 }
 
-# 71
+# 77
 void Timer2_Interrupt()
 {
 milliseconds = milliseconds + 1;

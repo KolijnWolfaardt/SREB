@@ -175,20 +175,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXSTAbits `VS361 ~T0 @X0 0 e@4012 ]
 "5928
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
-"2990
-[s S213 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S213 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"3000
-[s S214 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S214 . SPP0 SPP1 SPP2 SPP3 SPP4 SPP5 SPP6 SPP7 ]
-"3010
-[s S215 :7 `uc 1 :1 `uc 1 ]
-[n S215 . . SS2 ]
-"2989
-[u S212 `S213 1 `S214 1 `S215 1 ]
-[n S212 . . . . ]
-"3015
-[v _PORTDbits `VS212 ~T0 @X0 0 e@3971 ]
 [; ;pic18f4550.h: 44: extern volatile unsigned char SPPDATA @ 0xF62;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic18f4550.h
 [; ;pic18f4550.h: 46: asm("SPPDATA equ 0F62h");
@@ -4254,136 +4240,132 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;uart.c: 11: char rx_write = 0;
-[; ;uart.c: 13: extern unsigned long milliseconds;
-"19
+"30
 [v _UART_Setup `(v ~T0 @X0 1 ef ]
 {
-[; ;uart.c: 18: void UART_Setup()
-[; ;uart.c: 19: {
+[; ;uart.c: 29: void UART_Setup()
+[; ;uart.c: 30: {
 [e :U _UART_Setup ]
 [f ]
-[; ;uart.c: 30: TXSTA1 = 0b00001000;
-"30
-[e = _TXSTA1 -> -> 8 `i `uc ]
-[; ;uart.c: 41: RCSTA = 0b10010000;
+[; ;uart.c: 41: TXSTA1 = 0b00001000;
 "41
-[e = _RCSTA -> -> 144 `i `uc ]
-[; ;uart.c: 42: INTCONbits.GIE = 1;
-"42
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;uart.c: 43: INTCONbits.PEIE = 1;
-"43
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;uart.c: 44: RCONbits.IPEN = 1;
-"44
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;uart.c: 52: PIR1bits.RCIF = 0;
+[e = _TXSTA1 -> -> 8 `i `uc ]
+[; ;uart.c: 52: RCSTA = 0b10010000;
 "52
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;uart.c: 54: PIE1bits.RCIE = 1;
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;uart.c: 53: INTCONbits.GIE = 1;
+"53
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;uart.c: 54: INTCONbits.PEIE = 1;
 "54
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;uart.c: 55: RCONbits.IPEN = 1;
+"55
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;uart.c: 63: PIR1bits.RCIF = 0;
+"63
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;uart.c: 65: PIE1bits.RCIE = 1;
+"65
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-[; ;uart.c: 56: BAUDCONbits.BRG16 = 1;
-"56
+[; ;uart.c: 67: BAUDCONbits.BRG16 = 1;
+"67
 [e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
-[; ;uart.c: 58: SPBRG = ((48000000/115200)/16)-1;
-"58
+[; ;uart.c: 69: SPBRG = ((48000000/115200)/16)-1;
+"69
 [e = _SPBRG -> - / / -> 48000000 `l -> 115200 `l -> -> 16 `i `l -> -> 1 `i `l `uc ]
-[; ;uart.c: 61: TXSTA1bits.TXEN = 1;
-"61
+[; ;uart.c: 72: TXSTA1bits.TXEN = 1;
+"72
 [e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-[; ;uart.c: 62: }
-"62
+[; ;uart.c: 73: }
+"73
 [e :UE 535 ]
 }
-"72
+"84
 [v _UART_TX `(v ~T0 @X0 1 ef2`*uc`i ]
 {
-[; ;uart.c: 71: void UART_TX(char buffer[], int bufLength)
-[; ;uart.c: 72: {
+[; ;uart.c: 83: void UART_TX(char buffer[], int bufLength)
+[; ;uart.c: 84: {
 [e :U _UART_TX ]
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [v _bufLength `i ~T0 @X0 1 r2 ]
 [f ]
-"73
+"85
 [v _i `i ~T0 @X0 1 a ]
-[; ;uart.c: 73: int i = 0;
+[; ;uart.c: 85: int i = 0;
 [e = _i -> 0 `i ]
-[; ;uart.c: 75: for (i = 0; i<bufLength; i++)
-"75
+[; ;uart.c: 87: for (i = 0; i<bufLength; i++)
+"87
 {
 [e = _i -> 0 `i ]
 [e $U 540  ]
-"76
+"88
 [e :U 537 ]
-[; ;uart.c: 76: {
+[; ;uart.c: 88: {
 {
-[; ;uart.c: 77: UART_TX_byte(buffer[i]);
-"77
+[; ;uart.c: 89: UART_TX_byte(buffer[i]);
+"89
 [e ( _UART_TX_byte (1 *U + _buffer * -> _i `x -> -> # *U _buffer `i `x ]
-"78
+"90
 }
-"75
+"87
 [e ++ _i -> 1 `i ]
 [e :U 540 ]
 [e $ < _i _bufLength 537  ]
 [e :U 538 ]
-"78
+"90
 }
-[; ;uart.c: 78: }
-[; ;uart.c: 79: }
-"79
+[; ;uart.c: 90: }
+[; ;uart.c: 91: }
+"91
 [e :UE 536 ]
 }
-"86
+"99
 [v _UART_TX_byte `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;uart.c: 85: void UART_TX_byte(char character)
-[; ;uart.c: 86: {
+[; ;uart.c: 98: void UART_TX_byte(char character)
+[; ;uart.c: 99: {
 [e :U _UART_TX_byte ]
 [v _character `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;uart.c: 88: TXREG = character;
-"88
+[; ;uart.c: 101: TXREG = character;
+"101
 [e = _TXREG _character ]
-[; ;uart.c: 90: while (TXSTAbits.TRMT == 0);
-"90
+[; ;uart.c: 103: while (TXSTAbits.TRMT == 0);
+"103
 [e $U 542  ]
 [e :U 543 ]
 [e :U 542 ]
 [e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 543  ]
 [e :U 544 ]
-[; ;uart.c: 91: }
-"91
+[; ;uart.c: 104: }
+"104
 [e :UE 541 ]
 }
-"94
+"112
 [v _RX_Interrupt `(v ~T0 @X0 1 ef ]
 {
-[; ;uart.c: 93: void RX_Interrupt()
-[; ;uart.c: 94: {
+[; ;uart.c: 111: void RX_Interrupt()
+[; ;uart.c: 112: {
 [e :U _RX_Interrupt ]
 [f ]
-[; ;uart.c: 96: RXBuffer[rx_write] = RCREG;
-"96
+[; ;uart.c: 114: RXBuffer[rx_write] = RCREG;
+"114
 [e = *U + &U _RXBuffer * -> _rx_write `ux -> -> # *U &U _RXBuffer `ui `ux _RCREG ]
-[; ;uart.c: 98: rx_write++;
-"98
+[; ;uart.c: 117: rx_write++;
+"117
 [e ++ _rx_write -> -> 1 `i `uc ]
-[; ;uart.c: 99: if (rx_write == 128)
-"99
+[; ;uart.c: 118: if (rx_write == 128)
+"118
 [e $ ! == -> _rx_write `i -> 128 `i 546  ]
-[; ;uart.c: 100: rx_write = 0;
-"100
+[; ;uart.c: 119: rx_write = 0;
+"119
 [e = _rx_write -> -> 0 `i `uc ]
 [e :U 546 ]
-[; ;uart.c: 102: PORTDbits.RD3 = !PORTDbits.RD3;
-"102
-[e = . . _PORTDbits 0 3 -> -> ! != -> . . _PORTDbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;uart.c: 105: PIR1bits.RCIF = 0;
-"105
+[; ;uart.c: 122: PIR1bits.RCIF = 0;
+"122
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;uart.c: 106: }
-"106
+[; ;uart.c: 123: }
+"123
 [e :UE 545 ]
 }

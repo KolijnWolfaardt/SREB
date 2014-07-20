@@ -10,7 +10,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCSetup `(v ~T0 @X0 0 ef ]
 "11 include\uart.h
 [v _UART_TX `(v ~T0 @X0 0 ef2`*uc`i ]
-"9 include\pwm.h
+"7 include\pwm.h
 [v _PWM1_enable `(v ~T0 @X0 0 ef1`uc ]
 "4400 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic18f4550.h
 [s S304 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -26,7 +26,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S303 . . . . ]
 "4421
 [v _TRISCbits `VS303 ~T0 @X0 0 e@3988 ]
-"10 include\pwm.h
+"8 include\pwm.h
 [v _PWM2_enable `(v ~T0 @X0 0 ef1`uc ]
 "2990 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic18f4550.h
 [s S213 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -42,10 +42,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S212 . . . . ]
 "3015
 [v _PORTDbits `VS212 ~T0 @X0 0 e@3971 ]
-"7 include\pwm.h
-[v _PWM1_level `(v ~T0 @X0 0 ef1`uc ]
-"8
-[v _PWM2_level `(v ~T0 @X0 0 ef1`uc ]
+"9 include\pwm.h
+[v _PWM1_level `(v ~T0 @X0 0 ef1`i ]
+"10
+[v _PWM2_level `(v ~T0 @X0 0 ef1`i ]
 "2984 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic18f4550.h
 [v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "12 include\uart.h
@@ -4202,10 +4202,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 7: void ADCSetup();
 [; ;adc.h: 8: int ADC_sample(char channel);
 [; ;gpio.h: 7: void GPIO_Setup();
-[; ;pwm.h: 7: void PWM1_level(char level);
-[; ;pwm.h: 8: void PWM2_level(char level);
-[; ;pwm.h: 9: void PWM1_enable(char enable);
-[; ;pwm.h: 10: void PWM2_enable(char enable);
+[; ;pwm.h: 7: void PWM1_enable(char enable);
+[; ;pwm.h: 8: void PWM2_enable(char enable);
+[; ;pwm.h: 9: void PWM1_level(int level);
+[; ;pwm.h: 10: void PWM2_level(int level);
 [; ;timer.h: 7: unsigned long millis();
 [; ;timer.h: 8: void Timer_Setup();
 [; ;timer.h: 9: void delay_Seconds(int seconds);
@@ -4222,272 +4222,275 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;main.c: 13: extern char rx_write = 0;
-"16
-[v _theBuffer `Vuc ~T0 @X0 -> 128 `i e ]
-[; ;main.c: 16: volatile char theBuffer[128];
-"17
+"15
 [v _rx_read `Vi ~T0 @X0 1 e ]
 [i _rx_read
 -> 0 `i
 ]
-[; ;main.c: 17: volatile int rx_read = 0;
-"34
+[; ;main.c: 15: volatile int rx_read = 0;
+"32
 [v _main `(i ~T0 @X0 1 ef2@21`i`**uc ]
 {
-[; ;main.c: 33: int main(int argc, char** argv) @ 0x15
-[; ;main.c: 34: {
+[; ;main.c: 31: int main(int argc, char** argv) @ 0x15
+[; ;main.c: 32: {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"35
+"33
 [v _button0_flag `uc ~T0 @X0 1 a ]
-[; ;main.c: 35: char button0_flag = 0;
+[; ;main.c: 33: char button0_flag = 0;
 [e = _button0_flag -> -> 0 `i `uc ]
-"36
+"34
 [v _button1_flag `uc ~T0 @X0 1 a ]
-[; ;main.c: 36: char button1_flag = 0;
+[; ;main.c: 34: char button1_flag = 0;
 [e = _button1_flag -> -> 0 `i `uc ]
-"37
+"35
 [v _ledCounter `uc ~T0 @X0 1 a ]
-[; ;main.c: 37: char ledCounter = 0;
+[; ;main.c: 35: char ledCounter = 0;
 [e = _ledCounter -> -> 0 `i `uc ]
-"39
+"37
 [v _pwmValue `i ~T0 @X0 1 a ]
-[; ;main.c: 39: int pwmValue = 0;
+[; ;main.c: 37: int pwmValue = 0;
 [e = _pwmValue -> 0 `i ]
-[; ;main.c: 42: GPIO_Setup();
-"42
+[; ;main.c: 40: GPIO_Setup();
+"40
 [e ( _GPIO_Setup ..  ]
-[; ;main.c: 43: Timer_Setup();
-"43
+[; ;main.c: 41: Timer_Setup();
+"41
 [e ( _Timer_Setup ..  ]
-[; ;main.c: 44: UART_Setup();
-"44
+[; ;main.c: 42: UART_Setup();
+"42
 [e ( _UART_Setup ..  ]
-[; ;main.c: 45: ADCSetup();
-"45
+[; ;main.c: 43: ADCSetup();
+"43
 [e ( _ADCSetup ..  ]
-[; ;main.c: 46: rx_read = 0;
-"46
+[; ;main.c: 44: rx_read = 0;
+"44
 [e = _rx_read -> 0 `i ]
-[; ;main.c: 47: rx_write=0;
-"47
+[; ;main.c: 45: rx_write=0;
+"45
 [e = _rx_write -> -> 0 `i `uc ]
-[; ;main.c: 50: UART_TX("Hello",5);
-"50
+[; ;main.c: 48: UART_TX("Hello",5);
+"48
 [e ( _UART_TX (2 , -> :s 1C `*uc -> 5 `i ]
-[; ;main.c: 53: PWM1_enable(1);
-"53
+[; ;main.c: 52: PWM1_enable(1);
+"52
 [e ( _PWM1_enable (1 -> -> 1 `i `uc ]
-[; ;main.c: 54: TRISCbits.RC2 = 0;
-"54
+[; ;main.c: 53: TRISCbits.RC2 = 0;
+"53
 [e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-[; ;main.c: 56: PWM2_enable(1);
-"56
+[; ;main.c: 55: PWM2_enable(1);
+"55
 [e ( _PWM2_enable (1 -> -> 1 `i `uc ]
-[; ;main.c: 57: TRISCbits.RC1 = 0;
-"57
+[; ;main.c: 56: TRISCbits.RC1 = 0;
+"56
 [e = . . _TRISCbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 62: while(1)
-"62
+[; ;main.c: 58: while(1)
+"58
 [e :U 537 ]
-[; ;main.c: 63: {
-"63
+[; ;main.c: 59: {
+"59
 {
-[; ;main.c: 64: if (PORTDbits.RD4 == 0)
-"64
+[; ;main.c: 61: if (PORTDbits.RD4 == 0)
+"61
 [e $ ! == -> . . _PORTDbits 0 4 `i -> 0 `i 539  ]
-[; ;main.c: 65: {
-"65
+[; ;main.c: 62: {
+"62
 {
-[; ;main.c: 66: if (button0_flag == 0)
-"66
+[; ;main.c: 63: if (button0_flag == 0)
+"63
 [e $ ! == -> _button0_flag `i -> 0 `i 540  ]
-[; ;main.c: 67: {
-"67
+[; ;main.c: 64: {
+"64
 {
-[; ;main.c: 68: button0_flag=1;
-"68
+[; ;main.c: 65: button0_flag=1;
+"65
 [e = _button0_flag -> -> 1 `i `uc ]
-[; ;main.c: 70: ledCounter+=1;
-"70
+[; ;main.c: 67: ledCounter+=1;
+"67
 [e =+ _ledCounter -> -> 1 `i `uc ]
-[; ;main.c: 71: pwmValue+=1;
-"71
+[; ;main.c: 68: pwmValue+=1;
+"68
 [e =+ _pwmValue -> 1 `i ]
-[; ;main.c: 72: PWM1_level(300-pwmValue);
+[; ;main.c: 69: PWM1_level(300-pwmValue);
+"69
+[e ( _PWM1_level (1 - -> 300 `i _pwmValue ]
+[; ;main.c: 70: PWM2_level(pwmValue);
+"70
+[e ( _PWM2_level (1 _pwmValue ]
+[; ;main.c: 72: PORTD = (PORTD &0xf0) | (ledCounter &0x0f);
 "72
-[e ( _PWM1_level (1 -> - -> 300 `i _pwmValue `uc ]
-[; ;main.c: 73: PWM2_level(pwmValue);
-"73
-[e ( _PWM2_level (1 -> _pwmValue `uc ]
-[; ;main.c: 75: PORTD = (PORTD &0xf0) | (ledCounter &0x0f);
-"75
 [e = _PORTD -> | & -> _PORTD `i -> 240 `i & -> _ledCounter `i -> 15 `i `uc ]
-"76
+"73
 }
 [e :U 540 ]
-"77
+"74
 }
-[; ;main.c: 76: }
-[; ;main.c: 77: }
+[; ;main.c: 73: }
+[; ;main.c: 74: }
 [e $U 541  ]
-"78
+"75
 [e :U 539 ]
-[; ;main.c: 78: else
-[; ;main.c: 79: {
-"79
+[; ;main.c: 75: else
+[; ;main.c: 76: {
+"76
 {
-[; ;main.c: 80: button0_flag = 0;
-"80
+[; ;main.c: 77: button0_flag = 0;
+"77
 [e = _button0_flag -> -> 0 `i `uc ]
-"81
+"78
 }
 [e :U 541 ]
-[; ;main.c: 81: }
-[; ;main.c: 83: if (PORTDbits.RD5 == 0)
-"83
+[; ;main.c: 78: }
+[; ;main.c: 80: if (PORTDbits.RD5 == 0)
+"80
 [e $ ! == -> . . _PORTDbits 0 5 `i -> 0 `i 542  ]
-[; ;main.c: 84: {
-"84
+[; ;main.c: 81: {
+"81
 {
-[; ;main.c: 85: if (button1_flag == 0)
-"85
+[; ;main.c: 82: if (button1_flag == 0)
+"82
 [e $ ! == -> _button1_flag `i -> 0 `i 543  ]
-[; ;main.c: 86: {
-"86
+[; ;main.c: 83: {
+"83
 {
-[; ;main.c: 87: PORTDbits.RD1 = 1;
-"87
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 88: button1_flag =1;
-"88
+[; ;main.c: 84: button1_flag =1;
+"84
 [e = _button1_flag -> -> 1 `i `uc ]
-[; ;main.c: 91: UART_TX("ADC value is ",13);
-"91
+[; ;main.c: 87: UART_TX("ADC value is ",13);
+"87
 [e ( _UART_TX (2 , -> :s 2C `*uc -> 13 `i ]
-[; ;main.c: 92: UART_TX_byte(ADC_sample(5)>>2);
-"92
+[; ;main.c: 88: UART_TX_byte(ADC_sample(5)>>2);
+"88
 [e ( _UART_TX_byte (1 -> >> ( _ADC_sample (1 -> -> 5 `i `uc -> 2 `i `uc ]
-[; ;main.c: 93: UART_TX_byte(0x0A);
-"93
+[; ;main.c: 89: UART_TX_byte(0x0A);
+"89
 [e ( _UART_TX_byte (1 -> -> 10 `i `uc ]
-[; ;main.c: 94: UART_TX("PWM value is ",13);
-"94
+[; ;main.c: 90: UART_TX("PWM value is ",13);
+"90
 [e ( _UART_TX (2 , -> :s 3C `*uc -> 13 `i ]
-[; ;main.c: 95: UART_TX_byte(pwmValue);
-"95
+[; ;main.c: 91: UART_TX_byte(pwmValue);
+"91
 [e ( _UART_TX_byte (1 -> _pwmValue `uc ]
-[; ;main.c: 96: UART_TX_byte(0x0A);
-"96
+[; ;main.c: 92: UART_TX_byte(0x0A);
+"92
 [e ( _UART_TX_byte (1 -> -> 10 `i `uc ]
-[; ;main.c: 97: UART_TX("UART has received",17);
-"97
+[; ;main.c: 93: UART_TX("UART has received",17);
+"93
 [e ( _UART_TX (2 , -> :s 4C `*uc -> 17 `i ]
-[; ;main.c: 98: while(rx_read != rx_write)
-"98
+[; ;main.c: 94: while(rx_read != rx_write)
+"94
 [e $U 544  ]
 [e :U 545 ]
-[; ;main.c: 99: {
-"99
+[; ;main.c: 95: {
+"95
 {
-[; ;main.c: 100: UART_TX_byte(RXBuffer[rx_read]);
-"100
+[; ;main.c: 96: UART_TX_byte(RXBuffer[rx_read]);
+"96
 [e ( _UART_TX_byte (1 *U + &U _RXBuffer * -> -> _rx_read `ui `ux -> -> # *U &U _RXBuffer `ui `ux ]
-[; ;main.c: 102: rx_read++;
-"102
+[; ;main.c: 98: rx_read++;
+"98
 [e ++ _rx_read -> 1 `i ]
-[; ;main.c: 103: if (rx_read >= 128)
-"103
+[; ;main.c: 99: if (rx_read >= 128)
+"99
 [e $ ! >= _rx_read -> 128 `i 547  ]
-[; ;main.c: 104: rx_read = 0;
-"104
+[; ;main.c: 100: rx_read = 0;
+"100
 [e = _rx_read -> 0 `i ]
 [e :U 547 ]
-"105
+"101
 }
 [e :U 544 ]
-"98
+"94
 [e $ != _rx_read -> _rx_write `i 545  ]
 [e :U 546 ]
-[; ;main.c: 105: }
-[; ;main.c: 106: UART_TX_byte(0x0A);
-"106
+[; ;main.c: 101: }
+[; ;main.c: 102: UART_TX_byte(0x0A);
+"102
 [e ( _UART_TX_byte (1 -> -> 10 `i `uc ]
-"107
+"104
 }
 [e :U 543 ]
-"108
+"105
 }
-[; ;main.c: 107: }
-[; ;main.c: 108: }
+[; ;main.c: 104: }
+[; ;main.c: 105: }
 [e $U 548  ]
-"109
+"106
 [e :U 542 ]
-[; ;main.c: 109: else
-[; ;main.c: 110: {
-"110
+[; ;main.c: 106: else
+[; ;main.c: 107: {
+"107
 {
-[; ;main.c: 111: button1_flag=0;
-"111
+[; ;main.c: 108: button1_flag=0;
+"108
 [e = _button1_flag -> -> 0 `i `uc ]
-"112
+"109
 }
 [e :U 548 ]
+[; ;main.c: 109: }
+[; ;main.c: 111: if (PORTDbits.RD4 == 0)
+"111
+[e $ ! == -> . . _PORTDbits 0 4 `i -> 0 `i 549  ]
+[; ;main.c: 112: {
+"112
+{
+[; ;main.c: 113: UART_TX_byte(ADC_sample(5)>>2);
 "113
+[e ( _UART_TX_byte (1 -> >> ( _ADC_sample (1 -> -> 5 `i `uc -> 2 `i `uc ]
+"114
+}
+[e :U 549 ]
+"115
 }
 [e :U 536 ]
-"62
+"58
 [e $U 537  ]
 [e :U 538 ]
-[; ;main.c: 112: }
-[; ;main.c: 113: }
 [; ;main.c: 114: }
-"114
+[; ;main.c: 115: }
+[; ;main.c: 116: }
+"116
 [e :UE 535 ]
 }
-"117
-[v F4366 `(v ~T0 @X0 1 tf ]
-[v _isr `IF4366 ~T0 @X0 1 e ]
+"119
+[v F4365 `(v ~T0 @X0 1 tf ]
+[v _isr `IF4365 ~T0 @X0 1 e ]
 {
-[; ;main.c: 116: void interrupt isr(void)
-[; ;main.c: 117: {
+[; ;main.c: 118: void interrupt isr(void)
+[; ;main.c: 119: {
 [e :U _isr ]
 [f ]
-[; ;main.c: 118: if (PIR1bits.TXIF == 1);
-"118
-[e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 550  ]
-[e :U 550 ]
-[; ;main.c: 120: if (PIR1bits.RCIF == 1)
-"120
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 551  ]
-[; ;main.c: 121: {
-"121
-{
-[; ;main.c: 122: RX_Interrupt();
-"122
-[e ( _RX_Interrupt ..  ]
+[; ;main.c: 123: if (PIR1bits.RCIF == 1)
 "123
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 551  ]
+[; ;main.c: 124: {
+"124
+{
+[; ;main.c: 125: RX_Interrupt();
+"125
+[e ( _RX_Interrupt ..  ]
+"126
 }
 [e :U 551 ]
-[; ;main.c: 123: }
-[; ;main.c: 125: if (PIR1bits.TMR2IF == 1)
-"125
+[; ;main.c: 126: }
+[; ;main.c: 129: if (PIR1bits.TMR2IF == 1)
+"129
 [e $ ! == -> . . _PIR1bits 0 1 `i -> 1 `i 552  ]
-[; ;main.c: 126: {
-"126
+[; ;main.c: 130: {
+"130
 {
-[; ;main.c: 127: Timer2_Interrupt();
-"127
+[; ;main.c: 131: Timer2_Interrupt();
+"131
 [e ( _Timer2_Interrupt ..  ]
-"128
+"132
 }
 [e :U 552 ]
-[; ;main.c: 128: }
-[; ;main.c: 130: }
-"130
-[e :UE 549 ]
+[; ;main.c: 132: }
+[; ;main.c: 134: }
+"134
+[e :UE 550 ]
 }
 [a 1C 72 101 108 108 111 0 ]
 [a 4C 85 65 82 84 32 104 97 115 32 114 101 99 101 105 118 101 100 0 ]

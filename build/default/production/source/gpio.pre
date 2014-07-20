@@ -5280,12 +5280,12 @@ void GPIO_Setup();
 # 4 "source/gpio.c"
 void GPIO_Setup();
 
-# 12
+# 10
 void GPIO_Setup()
 {
 
 TRISD = TRISD & 0xf0;
-PORTD = 0x00;
+PORTD = PORTD & 0xf0;
 
 
 TRISD = TRISD | 0x30;

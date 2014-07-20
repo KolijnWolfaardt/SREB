@@ -12,8 +12,6 @@
 extern volatile char RXBuffer[];
 extern char rx_write = 0;
 
-
-volatile char theBuffer[RX_BUF_SIZE];
 volatile int rx_read = 0;
 
 /*About the @0x15
@@ -48,6 +46,7 @@ int main(int argc, char** argv) @ 0x15
 
     //Send a welcom message, also indicates the board is working
     UART_TX("Hello",5);
+    
 
     //Turn the psm signals on.
     PWM1_enable(1);
@@ -56,14 +55,12 @@ int main(int argc, char** argv) @ 0x15
     PWM2_enable(1);
     PWM2_TRIS = 0;
 
-    //UART_TX_byte(ADC_sample(5)>>2);
-
-    
     while(1)
     {
+        // check if button0 was pressed
         if (BUT0 == 0)
         {
-            if (button0_flag == 0)
+            if (button0_flag == 0) //Set a flag to prevent repeating
             {
                 button0_flag=1;
 
@@ -84,7 +81,6 @@ int main(int argc, char** argv) @ 0x15
         {
             if (button1_flag == 0)
             {
-                LED1 = 1;
                 button1_flag =1;
                 
                 //Do some status transmissions
@@ -104,24 +100,32 @@ int main(int argc, char** argv) @ 0x15
                         rx_read = 0;
                 }
                 UART_TX_byte(NEWLINE);
+
             }
         }
         else
         {
             button1_flag=0;
         }
+
+        if (BUT0 == 0)
+        {
+             UART_TX_byte(ADC_sample(5)>>2);
+        }
     }
 }
 
 void interrupt isr(void)
 {
-    if (PIR1bits.TXIF == 1); //If the buffer is empty,1 else, it is 0. Cleared by writing
-    
+    //if (PIR1bits.TXIF == 1); //If the buffer is empty,1 else, it is 0. Cleared by writing
+
+    //Uart Receive interrupt
     if (PIR1bits.RCIF == 1)
     {
         RX_Interrupt();
     }
 
+    //Timer 2 interrupt
     if (PIR1bits.TMR2IF == 1)
     {
         Timer2_Interrupt();

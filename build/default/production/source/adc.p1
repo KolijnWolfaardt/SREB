@@ -66,7 +66,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "4781
 [v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
-"7306
+"10 include\timer.h
+[v _delay_Millis `(v ~T0 @X0 0 ef1`i ]
+"7306 C:\Program Files (x86)\Microchip\xc8\v1.20\include\pic18f4550.h
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "7300
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
@@ -4120,17 +4122,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 148: extern void _delay3(unsigned char);
 [; ;adc.h: 7: void ADCSetup();
 [; ;adc.h: 8: int ADC_sample(char channel);
-[; ;adc.c: 4: void ADCSetup();
-[; ;adc.c: 5: int ADC_sample(char channel);
-"10 source/adc.c
+[; ;timer.h: 7: unsigned long millis();
+[; ;timer.h: 8: void Timer_Setup();
+[; ;timer.h: 9: void delay_Seconds(int seconds);
+[; ;timer.h: 10: void delay_Millis(int num);
+[; ;timer.h: 11: void Timer2_Interrupt();
+[; ;adc.c: 5: void ADCSetup();
+[; ;adc.c: 6: int ADC_sample(char channel);
+"11 source/adc.c
 [v _ADCSetup `(v ~T0 @X0 1 ef ]
 {
-[; ;adc.c: 9: void ADCSetup()
-[; ;adc.c: 10: {
+[; ;adc.c: 10: void ADCSetup()
+[; ;adc.c: 11: {
 [e :U _ADCSetup ]
 [f ]
-[; ;adc.c: 11: ADCON0bits.CHS = 0b000;
-"11
+[; ;adc.c: 12: ADCON0bits.CHS = 0b000;
+"12
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
 [; ;adc.c: 14: ADCON1bits.VCFG1 = 0;
 "14
@@ -4144,9 +4151,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 18: ADCON2bits.ADFM = 1;
 "18
 [e = . . _ADCON2bits 0 3 -> -> 1 `i `uc ]
-[; ;adc.c: 19: ADCON2bits.ACQT = 0b110;
+[; ;adc.c: 19: ADCON2bits.ACQT = 0b101;
 "19
-[e = . . _ADCON2bits 0 1 -> -> 6 `i `uc ]
+[e = . . _ADCON2bits 0 1 -> -> 5 `i `uc ]
 [; ;adc.c: 20: ADCON2bits.ADCS = 0b110;
 "20
 [e = . . _ADCON2bits 0 0 -> -> 6 `i `uc ]
@@ -4163,32 +4170,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 "28
 [e :UE 535 ]
 }
-"32
+"39
 [v _ADC_sample `(i ~T0 @X0 1 ef1`uc ]
 {
-[; ;adc.c: 31: int ADC_sample(char channel)
-[; ;adc.c: 32: {
+[; ;adc.c: 38: int ADC_sample(char channel)
+[; ;adc.c: 39: {
 [e :U _ADC_sample ]
 [v _channel `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;adc.c: 34: ADCON0bits.CHS = channel & 0b111;
-"34
+[; ;adc.c: 41: ADCON0bits.CHS = channel & 0b111;
+"41
 [e = . . _ADCON0bits 1 2 -> & -> _channel `i -> 7 `i `uc ]
-[; ;adc.c: 37: ADCON0bits.GO = 1;
-"37
+[; ;adc.c: 42: delay_Millis(0);
+"42
+[e ( _delay_Millis (1 -> 0 `i ]
+[; ;adc.c: 45: ADCON0bits.GO = 1;
+"45
 [e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;adc.c: 40: while(ADCON0bits.GO == 1);
-"40
+[; ;adc.c: 48: while(ADCON0bits.GO == 1);
+"48
 [e $U 537  ]
 [e :U 538 ]
 [e :U 537 ]
 [e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 538  ]
 [e :U 539 ]
-[; ;adc.c: 42: return (ADRESH <<8 | ADRESL);
-"42
+[; ;adc.c: 50: return (ADRESH <<8 | ADRESL);
+"50
 [e ) | << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 [e $UE 536  ]
-[; ;adc.c: 44: }
-"44
+[; ;adc.c: 52: }
+"52
 [e :UE 536 ]
 }

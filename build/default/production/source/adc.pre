@@ -5278,22 +5278,28 @@ extern void _delay3(unsigned char);
 void ADCSetup();
 int ADC_sample(char channel);
 
-# 4 "source/adc.c"
+# 7 "include\timer.h"
+unsigned long millis();
+void Timer_Setup();
+void delay_Seconds(int seconds);
+void delay_Millis(int num);
+void Timer2_Interrupt();
+
+# 5 "source/adc.c"
 void ADCSetup();
 int ADC_sample(char channel);
 
-# 9
+# 10
 void ADCSetup()
 {
 ADCON0bits.CHS = 0b000;
-
 
 ADCON1bits.VCFG1 = 0;
 ADCON1bits.VCFG0 = 0;
 ADCON1bits.PCFG = 0b1010;
 
 ADCON2bits.ADFM = 1;
-ADCON2bits.ACQT = 0b110;
+ADCON2bits.ACQT = 0b101;
 ADCON2bits.ADCS = 0b110;
 
 
@@ -5304,11 +5310,12 @@ ADCON0bits.ADON = 1;
 
 }
 
-
+# 38
 int ADC_sample(char channel)
 {
 
 ADCON0bits.CHS = channel & 0b111;
+delay_Millis(0);
 
 
 ADCON0bits.GO = 1;

@@ -10,7 +10,18 @@ void RX_Interrupt();
 volatile char RXBuffer[RX_BUF_SIZE];
 char rx_write = 0;
 
-extern unsigned long milliseconds;
+/* About the UART
+ * These UART functions send and receive. Sending is easy, just transmit a
+ * byte and wait for it to be done.
+ *
+ * Receiving happens spontaneously. When data is received, it is placed in the
+ * RXBuffer, and rx_write is incremented. When the buffer is full, rx_write is
+ * reset, and the buffer starts filling agin.
+ *
+ * Your code should check and read from the buffer regularly, otherwise data
+ * might be overwritten. To read, keep another pointer. This pointer points
+ * to the last place in the buffer that data was read from.
+ */
 
 /**
  * Configure the UART to run int 8 bit mode, at UARTSPEED
@@ -65,6 +76,7 @@ void UART_Setup()
 /**
  * Transmits bufLength charaters from the buffer. 
  * This function blocks execution until transmission is done.
+ * 
  * @param buffer
  * @param bufLength
  */
@@ -80,6 +92,7 @@ void UART_TX(char buffer[], int bufLength)
 
 /**
  * Transmits a single character. Blocks execution until done.
+ * 
  * @param character
  */
 void UART_TX_byte(char character)
@@ -90,16 +103,20 @@ void UART_TX_byte(char character)
     while (TXSTAbits.TRMT == 0); //While the buffer is full
 }
 
+
+/**
+ * This function is called when the UART receives a character. Do not call it
+ * from the main code.
+ */
 void RX_Interrupt()
 {
     //Place the received word in the buffer
     RXBuffer[rx_write] = RCREG;
 
+    //Increment the pointer
     rx_write++;
     if (rx_write ==  RX_BUF_SIZE)
         rx_write = 0;
-
-    LED3 = !LED3;
     
     //Clear the flag
     PIR1bits.RCIF = 0;

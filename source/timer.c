@@ -26,11 +26,10 @@ unsigned long millis()
  */
 void Timer_Setup()
 {
-    /*
-     * Give the timer a 10 postscale, turn it on and set the prescaler to 16
-     */
+    //The timer receives clock frequency divided by 4. Give it a 16x prescaler,
+    //and a 10x postscaler.
     T2CON = 0b01001111;
-    PR2 = 75;
+    PR2 = 75; //48MHz/4/16/10/75 = 1kHz
 
     INTCONbits.GIE  = 1;    //Enable global interrupts
     INTCONbits.PEIE = 1;    //Enable peripheral interrupts
@@ -40,11 +39,13 @@ void Timer_Setup()
     IPR1bits.TMR2IP = 1;    //Set the priority to high
 }
 
-/*
- Delay a certain number of seconds. This function uses the delayMillis function,
- * so it may not be accurate over long periods of time.
-*/
 
+/**
+ * Delay a certain number of seconds. This function uses the delayMillis function,
+ * so it may not be accurate over long periods of time.
+ *
+ * @param seconds The number of seconds to delay
+ */
 void delay_Seconds(int seconds)
 {
     int i =0;
@@ -55,9 +56,14 @@ void delay_Seconds(int seconds)
 }
 
 
-/*
- Delay a number of milliseconds
-*/
+/**
+ * Delay a certain number of seconds.
+ *
+ * This function relies on Timer2's functionality, and on it's interrupt. Call
+ * Timer_Setup() before calling this function.
+ *
+ * @param num The number of milliseconds to delay
+ */
 void delay_Millis(int num)
 {
     milliDelayCount = num;
