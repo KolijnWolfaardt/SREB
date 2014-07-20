@@ -1,0 +1,18 @@
+_ADCSetup: CODE, 2466 0 54
+_Timer_Setup: CODE, 2772 0 20
+_PWM1_enable: CODE, 2714 0 30
+__stringdata: SMALLCONST, 2048 0 52
+_PWM2_enable: CODE, 2684 0 30
+_main: CODE, 20 0 466
+_PWM1_level: CODE, 2654 0 30
+_PWM2_level: CODE, 2624 0 30
+_ADC_sample: CODE, 2404 0 62
+__initialization: CODE, 2574 0 36
+_UART_Setup: CODE, 2744 0 28
+_isr: CODE, 8 0 2228
+_RX_Interrupt: CODE, 2322 0 82
+_GPIO_Setup: CODE, 2810 0 18
+_UART_TX: CODE, 2236 0 86
+_UART_TX_byte: CODE, 2792 0 18
+_Timer2_Interrupt: CODE, 2520 0 54
+Total: 3324
