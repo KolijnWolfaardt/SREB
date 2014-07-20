@@ -1,0 +1,79 @@
+MPLINK 4.40, Linker
+Linker Map File - Created Sun Jul 20 18:28:28 2014
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x007f38    program   0x000008
+                   .org_3       code   0x007f40    program   0x0000bc
+.config_300000_TINYBLD18F2550USB.O       code   0x300000    program   0x000002
+.config_300002_TINYBLD18F2550USB.O       code   0x300002    program   0x000002
+.config_300004_TINYBLD18F2550USB.O       code   0x300004    program   0x000002
+.config_300006_TINYBLD18F2550USB.O       code   0x300006    program   0x000002
+.config_300008_TINYBLD18F2550USB.O       code   0x300008    program   0x000002
+.config_30000A_TINYBLD18F2550USB.O       code   0x30000a    program   0x000002
+.config_30000C_TINYBLD18F2550USB.O       code   0x30000c    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x007f38    0x007ffb      
+                            0x300000    0x30000d      
+            214 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+        IntrareBootloader   0x007f40    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                 MainLoop   0x007f56    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                  Receive   0x007fda    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                    Write   0x007fca    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                eraseloop   0x007f9c    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                    mainl   0x007f5a    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                 noconfig   0x007f9c    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                 noeeprom   0x007f90    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                   notrcv   0x007fec    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                   rcvoct   0x007f78    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                     rpt2   0x007fde    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                     rpt3   0x007fe0    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                     rptc   0x007fe2    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                  waitwre   0x007fc0    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+              way_to_exit   0x007ff8    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+             writebigloop   0x007fa2    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                writebyte   0x007fae    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+               writesloop   0x007faa    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                ziieroare   0x007fc4    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+        IntrareBootloader   0x007f40    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                 MainLoop   0x007f56    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                    mainl   0x007f5a    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                   rcvoct   0x007f78    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                 noeeprom   0x007f90    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                eraseloop   0x007f9c    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                 noconfig   0x007f9c    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+             writebigloop   0x007fa2    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+               writesloop   0x007faa    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                writebyte   0x007fae    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                  waitwre   0x007fc0    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                ziieroare   0x007fc4    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                    Write   0x007fca    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                  Receive   0x007fda    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                     rpt2   0x007fde    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                     rpt3   0x007fe0    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                     rptc   0x007fe2    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+                   notrcv   0x007fec    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+              way_to_exit   0x007ff8    program     static C:\Users\Kolijn\PICProjects\source\tinybld18F2550usb.asm
+
+
