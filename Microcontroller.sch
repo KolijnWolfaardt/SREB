@@ -40,7 +40,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 6
 Title ""
-Date "20 apr 2014"
+Date "20 jul 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -378,7 +378,7 @@ L R R2
 U 1 1 52F8BF80
 P 9050 2600
 F 0 "R2" V 9130 2600 40  0000 C CNN
-F 1 "1k" V 9057 2601 40  0000 C CNN
+F 1 "0" V 9057 2601 40  0000 C CNN
 F 2 "~" V 8980 2600 30  0000 C CNN
 F 3 "~" H 9050 2600 30  0000 C CNN
 	1    9050 2600
@@ -1238,4 +1238,6 @@ F 3 "" H 2150 2150 60  0000 C CNN
 	1    2150 2150
 	1    0    0    -1  
 $EndComp
+Text Notes 8050 2850 0    60   ~ 0
+Replace with 0 Ohm
 $EndSCHEMATC

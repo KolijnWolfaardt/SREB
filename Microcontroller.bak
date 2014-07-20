@@ -40,7 +40,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 6
 Title ""
-Date "20 apr 2014"
+Date "20 jul 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1238,4 +1238,6 @@ F 3 "" H 2150 2150 60  0000 C CNN
 	1    2150 2150
 	1    0    0    -1  
 $EndComp
+Text Notes 8250 2750 0    60   ~ 0
+Do not Populate
 $EndSCHEMATC
