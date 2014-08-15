@@ -1,0 +1,2 @@
+pdflatex SREB_Tutorial.tex
+pdflatex SREB_Tutorial.tex

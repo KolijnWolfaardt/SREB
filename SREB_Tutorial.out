@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Hardware}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Power Supply}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{PIC and USB}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{GPIO Pins}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Motor Driver}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Buttons and LEDS}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Jumpers And configuration}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{Bootloader}{}% 8
+\BOOKMARK [1][-]{section.3}{Writing Code}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{MPLABX IDE}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Skeleton code}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Appendix: Git}{}% 12
+\BOOKMARK [1][-]{section.5}{Appendix: Full Schematic}{}% 13
