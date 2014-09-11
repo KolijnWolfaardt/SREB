@@ -119,6 +119,24 @@ ln -s /dev/ttyACM0 ~/.wine/dosdevices/com1
 The IDE we are using is MPLABX, which is supplied by Microchip. There is an accompaning compiler for the PIC, the XC8 compiler. These can be downloaded from the microchip site, and both work for windows and linux.
 
 \subsection{Skeleton code}
+\paragraph{Microcontroller concept:Interrupts}
+A normal computer can perform more than one task at once. This is because the operating system divids computing time between different tasks. A microcontroller can also have several functions to perform, but normally does not have an operating system to organise time. Instead, the microcontroller uses interrupts. An interrupt is an event that occurs, which forces the processor to give time to another function.  
+
+Physically an interrupt is usually implemented as a line going from an interrupt source, such as a peripheral, to the interrupt manager. When the interrupt occurs a flag is set. The processor jumps to a different place in program memory. The interrupt flag has to be cleared before the interrupt can happen again.
+
+The implementation of interrupts vary between processors. They can usually be enbaled or disabled, and given different priorities. Some devices have an interrupt table, which determines which address to jump to depening on the interrupt. Other devices only have one address, and it is up to the programmer to handle differnet interrupts.
+
+\paragraph{Program Flow}
+A microcontroller will usually have two different sections: An initialization section, where hardware is configured and variables are set, and an endless loop, where the microcontroller reacts on inputs.
+
+Interrupts can be used to react to several inputs, such as received messages or button presses. It is usually a good ideal to keep your interrupt code as short as possible, and then return to the main code. In the interrupt, set a flag or store the important values, and use your main loop to process the data.
+
+
+\paragraph{Coding concept: State Machines}
+A state machine is a device that behaves differently depening on what state it is in. It can take several inputs, and depending on them and the current state, can decide which tate to go to next. Basically an implementation of a flow diagram.
+
+In the microcontroller this can be used to implement the different actions of the robot. THe default state is the 'driving' state. If it receives a command, or senses a line, it can go to a different state, such as waiting, or turning.
+
 \paragraph{Analog}
 \paragraph{UART}
 \paragraph{Timers}
